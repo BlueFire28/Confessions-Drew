@@ -12,7 +12,7 @@ bot.on('ready', () => {
 // Event listener: Message Received ( This will run every time a message is received)
 bot.on('message', async message => {
 	if(message.channel.type == 'dm'){
-		let channel = bot.channels.get("538886138866434069")
+		let channel = bot.channels.get("496094361441009664")
 		return await channel.send(`Anonymous: ${message.content}`)
 	}
 }); //the end of bot.on ------------------------------
