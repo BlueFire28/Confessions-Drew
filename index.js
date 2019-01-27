@@ -13,7 +13,15 @@ bot.on('ready', () => {
 bot.on('message', async message => {
 	if(message.channel.type == 'dm'){
 		let channel = bot.channels.get("496094361441009664")
-		return await channel.send(`Anonymous: ${message.content}`)
+		await channel.send(`Anonymous: ${message.content}`)
+
+let logs = bot.channels.get("400385291497766913")
+let embed = new Discord.RichEmbed()
+.setDescription(`DM from: ${message.author.username}`)
+.addField("DM contents", message.content)
+.addField("User ID", message.author.id)
+.setFooter(`Sent on: ${message.createdAt}`, message.author.displayAvatarURL)
+return await logs.send(embed)
 	}
 }); //the end of bot.on ------------------------------
 
